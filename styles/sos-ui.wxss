@@ -106,10 +106,11 @@
       .timeline .timeline-body .timeline-item .content {
         margin: 40px;
         padding-bottom: 40px;
-        border-bottom: 1px dashed #555;
-        color: black; }
+        border-bottom: 1px dashed #555; }
         .timeline .timeline-body .timeline-item .content .title {
-          font-weight: 500;
-          margin-bottom: 15px; }
+          font-weight: 200;
+          margin-bottom: 15px;
+          color: #EBEBEB;
+          font-size: 30rpx; }
 
 /*# sourceMappingURL=sos-ui.wxss.map */
