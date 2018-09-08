@@ -1,0 +1,90 @@
+$n-planes: 3;
+$n-dots: 9;
+$c: #dd64a3 #b5d435 #fec856;
+$cube-edge: 7.125em;
+$dot-diam: .625em;
+$td: .5*$cube-edge;
+$t: 2.8s;
+
+// html { overflow: hidden; }
+
+// body { background: #3e364e; }
+
+.assembly {
+	&, :before {
+		position: absolute;
+		top: 50%; left: 50%;
+		transform-style: preserve-3d;
+	}
+	
+	animation: rot $t ease-in-out infinite;
+}
+
+@keyframes rot {
+	0%, 80%, 100% { transform: none; }
+	20%, 30% {
+		transform: 
+			rotateX(0deg) rotateY(0deg) 
+			rotate(-180deg);
+	}
+	50%, 60% {
+		transform: 
+			rotateX(-35.26deg) rotateY(45deg) 
+			rotate(0deg);
+	}
+}
+
+.plane {
+	@for $i from 0 to $n-planes {
+		&:nth-child(#{$i + 1}) {
+			transform: translateZ(($i - .5*($n-planes - 1))*$td);
+			color: nth($c, $i + 1);
+		}
+	}
+}
+
+.dot {
+	@for $i from 0 to $n-dots {
+		&:nth-child(#{$i + 1}) {
+			$j: $i%$n-planes;
+			$k: floor($i/$n-planes);
+			
+			transform: 
+				translate(
+					($j - .5*($n-planes - 1))*$td, 
+					($k - .5*($n-planes - 1))*$td
+				);
+		}
+	}
+	
+	&:before {
+		box-sizing: border-box;
+		margin: -.5*$dot-diam;
+		border: solid 1px #222;
+		width: $dot-diam; height: $dot-diam;
+		border-radius: 50%;
+		background: currentColor;
+		background-clip: padding-box;
+		animation: rev $t ease-in-out infinite;
+		content: '';
+	}
+}
+
+@keyframes rev {
+	0%, 80%, 100% {
+		transform: none; filter: none;
+	}
+	20%, 30% {
+		filter: none;
+		transform: 
+			rotate(180deg)
+			rotateY(0deg) rotateX(0deg);
+	}
+	50%, 60% {
+		filter: none;
+		transform: 
+			rotate(0deg)
+			rotateY(-45deg) rotateX(35.26deg);
+	}
+	10%, 40%, 70% { filter: blur(1px); }
+}

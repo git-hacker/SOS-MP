@@ -1,2 +1,6 @@
 /**app.wxss**/
+@import "./styles/sos-ui.wxss";
 
+Page {
+  background: black;
+}
