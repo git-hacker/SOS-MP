@@ -71,32 +71,8 @@ Page({
   onLoad: function (options) {
     let that = this
 
-    // Get Current User from LeanCloud
-    // let user = AV.User.current()
-    // app.globalData.user = user
-    
-    
-    
     // Get Location in every 20 seconds
     // this.loopGetLocation(60000)
-    
-
-    // Create new Location under User
-    // LOCATION.newLocation(locationData)
-    //   .then( result => {
-    //     console.log(99999,result)
-    //   })
-    //   .catch( error => {
-    //     console.log(error)
-    //   })
-
-     
-    // Query location under User
-    // LOCATION.queryLocation(user)
-    //   .then( result => {
-    //     console.log(7777,result)
-    //   })
-
 
   },
 
