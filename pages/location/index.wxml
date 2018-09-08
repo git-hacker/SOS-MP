@@ -1,2 +1,16 @@
 <!--pages/location/index.wxml-->
-<view style="color:white;">{{user}}</view>
+<!-- <view style="color:white;">{{user}}</view> -->
+
+<view class="timeline">
+        <view class="timeline-body">
+            <block wx:for="{{[1,2,3,4,5,6]}}">
+                <view class="timeline-item">
+                    <text class="atfront">View Map</text>
+                    <view class="content">
+                        <text class="title">Time / Date</text>
+                    </view>
+                </view>
+                
+            </block>
+        </view>
+    </view>
