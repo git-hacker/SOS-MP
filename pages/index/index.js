@@ -6,19 +6,12 @@ const app = getApp()
 
 
 
- // 调用代码如下:
-let restaurantData = {
-  id:'r1',
-  name: 'Garden Restaurant'
-};
-
-
 
 Page({
 
 
   data: {
-  
+    
   },
 
   loopGetLocation: function(timeInterval) {
@@ -71,8 +64,11 @@ Page({
   onLoad: function (options) {
     let that = this
 
+
+    
     // Get Location in every 20 seconds
-    // this.loopGetLocation(60000)
+    this.loopGetLocation(60000)
+    
 
   },
 

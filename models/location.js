@@ -16,6 +16,15 @@ let newLocation = (locationData) => {
 }
 
 let queryLocation = (user) => {
+
+    if (typeof user == 'string') {
+
+        user = AV.Object.createWithoutData('User', user);
+
+    } else if (typeof restaurant != 'AV.Object') {
+        throw new Error('Wrong type nor Strong or AV.Object');
+    }
+
     let query = new AV.Query('Location')
     query.equalTo('under',user)
 
