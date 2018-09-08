@@ -1,4 +1,6 @@
 // pages/map/index.js
+
+const app = getApp()
 Page({
 
 
@@ -10,6 +12,7 @@ Page({
     console.log(66666,options)
     var latitude = options.latitude
     var longitude = options.longitude
+    
   },
 
 })
