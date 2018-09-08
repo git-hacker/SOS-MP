@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/location/index"
+    "pages/location/index",
+    "pages/map/index"
   ],
   "window":{
     "backgroundTextStyle":"dark",

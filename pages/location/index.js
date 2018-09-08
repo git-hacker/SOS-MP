@@ -12,17 +12,49 @@ Page({
   data: {
   
   },
+  
+  showMap: function(e) {
+    console.log(656565, e)
+    let longitude = e.currentTarget.dataset.longitude
+    let latitude = e.currentTarget.dataset.latitude
+
+    // FOR JUMPING TO MAP PAGE
+    // var url = `/pages/map/index?latitude=${latitude}&longitude=${longitude}`
+    // console.log(444444343432,url)
+    // wx.navigateTo({url})
+
+   
+    wx.authorize({
+      scope: 'scope.userLocation',
+      success(res) {
+          console.log(33,res)
+          console.log(22,longitude, latitude)
+          wx.openLocation({
+            latitude: longitude,
+            longitude: latitude,
+            scale: 30
+          }) 
+      },
+      fail(err) {
+              console.log(44,err)
+      } 
+    })
+      
+  },
 
 
   onLoad: function (options) {
+    let that = this
     var user = options.user
 
     this.setData({user})
 
     // Query location under User
     LOCATION.queryLocation(user)
-      .then( result => {
-        console.log(7777,result)
+      .then( results => {
+        console.log(7777,results)
+        that.setData({results})
+        
       })
     }
 })

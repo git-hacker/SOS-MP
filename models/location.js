@@ -9,7 +9,7 @@ let newLocation = (locationData) => {
     let location = new AV.Object('Location');
 
     location.set('under', user);
-    location.set('longtitude', longitude);
+    location.set('longitude', longitude);
     location.set('latitude', latitude);
 
     return location.save();
@@ -27,6 +27,7 @@ let queryLocation = (user) => {
 
     let query = new AV.Query('Location')
     query.equalTo('under',user)
+    query.descending('createdAt');
     // let query = AV.Query.doCloudQuery(`select * from Location where under=${user.}`)
     // SELECT * FROM SomeTable WHERE ID=6-4
     // update TodoFolder set name="家庭" where objectId="558e20cbe4b060308e3eb36c"

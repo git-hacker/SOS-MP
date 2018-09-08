@@ -3,11 +3,12 @@
 
 <view class="timeline">
         <view class="timeline-body">
-            <block wx:for="{{[1,2,3,4,5,6]}}">
+            <block wx:for="{{results}}">
                 <view class="timeline-item">
-                    <text class="atfront">View Map</text>
+                    <text bindtap="showMap" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" class="atfront" >View Map</text>
+                    <button bindtap="showMap" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}"> Open Location </button>
                     <view class="content">
-                        <text class="title">Time / Date</text>
+                        <text class="title">{{item.createdAt}}</text>
                     </view>
                 </view>
                 
