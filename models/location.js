@@ -1,13 +1,20 @@
 const AV = require('../libs/av-weapp-min.js')
 
-class LOCATION extends AV.Object {
-    // allows to read local data
-    // get upvote() { return this.get('upvote') }
-    
-    // allows to write local data
-    // set upvote(value) { this.set('upvote',value) }
+
+let newLocation = (locationData) => {
+    let user = locationData.user;
+    if (user == undefined) throw new Error('Wrong type');
+    let longitude = locationData.longitude || 0;
+    let latitude = locationData.latitude || 0;
+    let location = new AV.Object('Location');
+
+    location.set('under', user);
+    location.set('longtitude', longitude);
+    location.set('latitude', latitude);
+
+    return location.save();
 }
 
-// Export Object
-AV.Object.register(LOCATION, 'Location')
-module.exports = LOCATION
+module.exports = {
+    newLocation
+}
