@@ -10,7 +10,16 @@ AV.init({
 App({
   onLaunch: function () {
 
+    AV.User.loginWithWeapp()
+    .then(user => {
 
+      this.globalData.user = user.toJSON();
+
+      console.log(333,this.globalData)
+      return user
+      // return this.globalData.user
+    })
+    .catch(console.error);
      
   },
   globalData: {

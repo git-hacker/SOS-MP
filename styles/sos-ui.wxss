@@ -15,13 +15,13 @@
     transform: rotateX(-35.26deg) rotateY(45deg) rotate(0deg); } }
 .plane:nth-child(1) {
   transform: translateZ(-3.5625em);
-  color: #dd64a3; }
+  color: #b9b9b9; }
 .plane:nth-child(2) {
   transform: translateZ(0em);
-  color: #b5d435; }
+  color: #7c7c7c; }
 .plane:nth-child(3) {
   transform: translateZ(3.5625em);
-  color: #fec856; }
+  color: #414141; }
 
 .dot:nth-child(1) {
   transform: translate(-3.5625em, -3.5625em); }

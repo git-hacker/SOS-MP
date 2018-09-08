@@ -1,0 +1,40 @@
+
+<view class='assembly'>
+    <view class='plane'>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+    </view>
+    <view class='plane'>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+    </view>
+    <view class='plane'>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+      <view class='dot'></view>
+    </view>
+
+
+  </view>
+
+  
