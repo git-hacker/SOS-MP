@@ -1,4 +1,8 @@
 
+    <button plain  open-type="share" style="border: 0px !important; display:relative; overflow: visible; height:100vh; width: 100vw;"></button>
+
+
+
 <view class='assembly'>
     <view class='plane'>
       <view class='dot'></view>
@@ -37,4 +41,10 @@
 
   </view>
 
-  
+  <view style="color:white;">
+    {{latitude}}
+  </view>
+
+  <view style="color:white;">
+    {{longitude}}
+  </view>

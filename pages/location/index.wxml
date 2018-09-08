@@ -1,0 +1,2 @@
+<!--pages/location/index.wxml-->
+<view style="color:white;">{{user}}</view>

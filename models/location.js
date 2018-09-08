@@ -15,6 +15,15 @@ let newLocation = (locationData) => {
     return location.save();
 }
 
+let queryLocation = (user) => {
+    let query = new AV.Query('Location')
+    query.equalTo('under',user)
+
+    return query.find()
+}
+
+
 module.exports = {
-    newLocation
+    newLocation,
+    queryLocation
 }
