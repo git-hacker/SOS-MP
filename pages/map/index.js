@@ -46,13 +46,30 @@ Page({
         ]
         const { latitude, longitude, id } = list[0]
 
-        that.setData({
-          latitude,
-          longitude,
-          markers: [{ latitude, longitude, id }],
-          polyline,
-          list
-        })
+        if (that.data.markers.length) {
+          if (that.data.markers[0].id !== id) {
+            that.setData({
+              latitude,
+              longitude,
+              markers: [{ latitude, longitude, id }],
+              polyline,
+              list
+            })
+
+            wx.showToast({
+              title: '地理位置已更新',
+              icon: 'loading'
+            })
+          }
+        } else {
+          that.setData({
+            latitude,
+            longitude,
+            markers: [{ latitude, longitude, id }],
+            polyline,
+            list
+          })
+        }
       })
     }
 
