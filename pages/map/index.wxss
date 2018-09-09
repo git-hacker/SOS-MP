@@ -1,1 +1,31 @@
 /* pages/map/index.wxss */
+.map {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.map__body {
+  flex-grow: 0;
+  width: 100%;
+  height: 45vh;
+}
+
+.map__timeline {
+  flex-grow: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.map__timeline-item {
+  font-size: 16px;
+  color: #FFF;
+  padding: 25rpx 30rpx;
+  border-bottom: 1px solid #FFF;
+}
+
+.map__timeline-item.active {
+  color: red;
+}

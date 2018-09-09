@@ -1,2 +1,24 @@
-<!--pages/map/index.wxml-->
-<text>pages/map/index.wxml</text>
+<view class="map">
+  <map
+    wx:if="{{ markers.length }}"
+    class="map__body"
+    latitude="{{ latitude }}"
+    longitude="{{ longitude }}"
+    markers="{{ markers }}"
+    polyline="{{ polyline }}"
+  ></map>
+
+  <view class="map__timeline">
+    <block wx:for="{{ list }}" wx:key="{{ item.id }}">
+      <view
+        class="map__timeline-item {{ markers[0].id === item.id ? 'active' : '' }}"
+        bindtap="updateMarkers"
+        data-latitude="{{ item.latitude }}"
+        data-longitude="{{ item.longitude }}"
+        data-id="{{ item.id }}"
+      >
+        <text>{{ item.createdAt }}</text>
+      </view>
+    </block>
+  </view>
+</view>

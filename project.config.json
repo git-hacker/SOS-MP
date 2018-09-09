@@ -40,6 +40,12 @@
 					"name": "Location",
 					"pathName": "pages/location/index",
 					"query": "user=5b934ddffb4ffe005c5c546d"
+				},
+        {
+					"id": 1,
+					"name": "map",
+					"pathName": "pages/map/index",
+					"query": "user=5b934ddffb4ffe005c5c546d"
 				}
 			]
 		}
