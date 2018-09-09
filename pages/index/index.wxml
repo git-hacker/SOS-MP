@@ -40,11 +40,11 @@
 
 
   </view>
-
+<!-- 
   <view style="color:white; position:fixed; top: 0; left:0;">
     {{latitude}}
   </view>
 
   <view style="color:white; position:fixed; top: 50rpx; left:0;">
     {{longitude}}
-  </view>
+  </view> -->

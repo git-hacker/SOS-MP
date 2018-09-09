@@ -66,7 +66,7 @@ Page({
 
 
     
-    // Get Location in every 20 seconds
+    // Get Location in every 60 seconds
     this.loopGetLocation(60000)
     
 
@@ -87,8 +87,8 @@ Page({
 
 
     return {
-      title     : "SOS .. Please Help me",
-      path      : "pages/location/index?user=" + user.id,
+      title     : "SOS 我现在有危险，请帮助我！",
+      path      : "pages/map/index?user=" + user.id,
       imageUrl  : '../../dist/images/help.jpg'
     }
   },
