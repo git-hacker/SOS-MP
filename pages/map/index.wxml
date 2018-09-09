@@ -19,6 +19,7 @@
         data-longitude="{{ item.longitude }}"
         data-id="{{ item.id }}"
       >
+        <text class="map__timeline-icon"></text>
         <text>{{ utils.parseTimestamp(item.createdAt) }}</text>
       </view>
     </block>

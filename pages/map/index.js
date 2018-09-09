@@ -46,12 +46,12 @@ Page({
           dottedLine: true
         }
       ]
-      const { latitude, longitude } = list[0]
+      const { latitude, longitude, id } = list[0]
 
       that.setData({
         latitude,
         longitude,
-        markers: [{ latitude, longitude }],
+        markers: [{ latitude, longitude, id }],
         polyline,
         list
       })
