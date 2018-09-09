@@ -1,50 +1,55 @@
 
-    <button plain  open-type="share" style="border: 0px !important; display:relative; overflow: visible; height:100vh; width: 100vw;"></button>
+<button plain open-type="share" style="border: 0px !important; position: fixed; overflow: visible; height:100vh; width: 100vw;"></button>
 
-
-
-<view class='assembly'>
-    <view class='plane'>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
+<view class="homepage">
+  <view class="homepage__assembly">
+    <view class='assembly'>
+      <view class='plane'>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+      </view>
+      <view class='plane'>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+      </view>
+      <view class='plane'>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+        <view class='dot'></view>
+      </view>
     </view>
-    <view class='plane'>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-    </view>
-    <view class='plane'>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-      <view class='dot'></view>
-    </view>
+    <!--
+         <view style="color:white; position:fixed; top: 0; left:0;">
+         {{latitude}}
+         </view>
 
-
+         <view style="color:white; position:fixed; top: 50rpx; left:0;">
+         {{longitude}}
+         </view> -->
   </view>
-<!-- 
-  <view style="color:white; position:fixed; top: 0; left:0;">
-    {{latitude}}
-  </view>
 
-  <view style="color:white; position:fixed; top: 50rpx; left:0;">
-    {{longitude}}
-  </view> -->
+  <view class="homepage__text">
+    <text>点击方块将我的地理位置发送给他人</text>
+    <text>小程序运行期间会时时发送地理位置，请不要关闭本小程序</text>
+  </view>
+</view>

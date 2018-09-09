@@ -7,7 +7,7 @@
   "window":{
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "点击方块分享我的位置",
+    "navigationBarTitleText": "SOS",
     "navigationBarTextStyle":"white"
   }
 }

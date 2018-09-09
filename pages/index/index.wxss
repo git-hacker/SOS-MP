@@ -1,1 +1,26 @@
 /* pages/landing/index.wxss */
+
+.homepage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage__assembly {
+  flex-grow: 1;
+}
+
+.homepage__text {
+  height: 20vh;
+  padding: 0 10vw;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 10pt;
+  line-height: 15pt;
+  text-align: center;
+}

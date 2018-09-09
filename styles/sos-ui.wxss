@@ -2,7 +2,7 @@
   animation: rot 2.8s ease-in-out infinite; }
   .assembly, .assembly :before {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform-style: preserve-3d; }
 
