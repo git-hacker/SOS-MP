@@ -13,7 +13,7 @@
 
 .homepage__text {
   height: 20vh;
-  padding: 0 10vw;
+  padding: 200rpx 20vw;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;

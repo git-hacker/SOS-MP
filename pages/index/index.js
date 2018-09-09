@@ -59,7 +59,20 @@ Page({
       })
   },
 
-  
+  safe: function() {
+
+    let user = AV.User.current()
+
+    LOCATION.clearLocation(user)
+
+    wx.showToast({
+      title: 'You are safe',
+      icon: 'success',
+      duration: 2000
+    })
+
+    
+  },
 
   onLoad: function (options) {
     let that = this
@@ -67,7 +80,7 @@ Page({
 
     
     // Get Location in every 60 seconds
-    this.loopGetLocation(60000)
+    // this.loopGetLocation(60000)
     
 
   },

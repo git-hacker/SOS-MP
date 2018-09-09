@@ -53,3 +53,12 @@
     <text>小程序运行期间会时时发送地理位置，请不要关闭本小程序</text>
   </view>
 </view>
+
+<view bindtap="safe" style="position:fixed; bottom:50rpx; left:50rpx; width:200rpx; height:200rpx; border-radius:50%; background:white;">
+  <view style="display:flex; justify-content:center; align-items:center; width:200rpx; height:200rpx;">
+
+    <text style="color: black;">Safed</text>
+
+  </view>
+
+</view>
