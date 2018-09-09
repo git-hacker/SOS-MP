@@ -1,15 +1,14 @@
 // pages/map/index.js
 const LOCATION = require('../../models/location.js')
+let timer
 
 Page({
   data: {
-    user: '',
-    list: [],
-
     latitude: 0,
     longitude: 0,
     polyline: [],
-    markers: []
+    markers: [],
+    list: []
   },
 
   updateMarkers: function (e) {
@@ -25,36 +24,46 @@ Page({
     const that = this
     const user = options.user
 
-    this.setData({ user })
+    const queryLocation = function (user) {
+      // Query location under User
+      LOCATION.queryLocation(user).then(results => {
+        const list = results.map(i => ({
+          id: i.id,
+          latitude: i.attributes.longitude, // !!!
+          longitude: i.attributes.latitude, // !!!
+          createdAt: i.createdAt
+        }))
+        const polyline = [
+          {
+            points: list.map(({ latitude, longitude }) => ({
+              latitude,
+              longitude
+            })),
+            color: '#FF0000DD',
+            width: 2,
+            dottedLine: true
+          }
+        ]
+        const { latitude, longitude, id } = list[0]
 
-    // Query location under User
-    LOCATION.queryLocation(user).then(results => {
-      const list = results.map(i => ({
-        id: i.id,
-        latitude: i.attributes.longitude, // !!!
-        longitude: i.attributes.latitude, // !!!
-        createdAt: i.createdAt
-      }))
-      const polyline = [
-        {
-          points: list.map(({ latitude, longitude }) => ({
-            latitude,
-            longitude
-          })),
-          color: '#FF0000DD',
-          width: 2,
-          dottedLine: true
-        }
-      ]
-      const { latitude, longitude, id } = list[0]
-
-      that.setData({
-        latitude,
-        longitude,
-        markers: [{ latitude, longitude, id }],
-        polyline,
-        list
+        that.setData({
+          latitude,
+          longitude,
+          markers: [{ latitude, longitude, id }],
+          polyline,
+          list
+        })
       })
-    })
+    }
+
+    timer = setInterval(function () {
+      queryLocation(user)
+    }, 60000)
+    queryLocation(user)
+  },
+
+  // Clear timer when unloading page
+  onUnload: function () {
+    clearInterval(timer)
   }
 })
