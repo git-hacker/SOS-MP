@@ -11,14 +11,14 @@ Page({
 
 
   data: {
-    
+
   },
 
   loopGetLocation: function(timeInterval) {
     let that = this
     that.getLocation()
-    
-    setInterval( () => {  
+
+    setInterval( () => {
       that.getLocation()
     }, timeInterval)
   },
@@ -38,7 +38,7 @@ Page({
         that.sendLocationToLeanCloud(latitude, longitude, user)
       }
     })
-    
+
   },
 
   sendLocationToLeanCloud: function(longitude, latitude, user) {
@@ -48,7 +48,7 @@ Page({
                         latitude,
                         user,
                       }
-    
+
     // Create new Location under User
     LOCATION.newLocation(locationData)
       .then( result => {
@@ -63,25 +63,30 @@ Page({
 
     let user = AV.User.current()
 
-    LOCATION.clearLocation(user)
-
-    wx.showToast({
-      title: 'You are safe',
-      icon: 'success',
-      duration: 2000
+    wx.showModal({
+      title: '提示',
+      content: '确定已安全吗？',
+      success: function (sm) {
+        if (sm.confirm) {
+          LOCATION.clearLocation(user)
+          wx.showToast({
+            title: 'You are safe',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
     })
-
-    
   },
 
   onLoad: function (options) {
     let that = this
 
 
-    
+
     // Get Location in every 60 seconds
     this.loopGetLocation(60000)
-    
+
 
   },
 
