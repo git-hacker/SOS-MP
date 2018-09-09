@@ -80,7 +80,7 @@ Page({
 
     
     // Get Location in every 60 seconds
-    // this.loopGetLocation(60000)
+    this.loopGetLocation(60000)
     
 
   },
