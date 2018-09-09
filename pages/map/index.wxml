@@ -1,3 +1,5 @@
+<wxs module="utils" src="../../utils/utils.wxs"></wxs>
+
 <view class="map">
   <map
     wx:if="{{ markers.length }}"
@@ -17,7 +19,7 @@
         data-longitude="{{ item.longitude }}"
         data-id="{{ item.id }}"
       >
-        <text>{{ item.createdAt }}</text>
+        <text>{{ utils.parseTimestamp(item.createdAt) }}</text>
       </view>
     </block>
   </view>
